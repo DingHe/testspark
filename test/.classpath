@@ -12,5 +12,6 @@
 	<classpathentry kind="lib" path="E:/tmp/spark-1.6.0-bin-hadoop2.6/spark-1.6.0-bin-hadoop2.6/lib/spark-assembly-1.6.0-hadoop2.6.0.jar"/>
 	<classpathentry kind="lib" path="E:/tmp/spark-1.6.0-bin-hadoop2.6/spark-1.6.0-bin-hadoop2.6/lib/spark-examples-1.6.0-hadoop2.6.0.jar"/>
 	<classpathentry kind="lib" path="E:/tmp/jblas-1.2.4.jar"/>
+	<classpathentry kind="lib" path="E:/tmp/breeze_2.10-0.11.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
