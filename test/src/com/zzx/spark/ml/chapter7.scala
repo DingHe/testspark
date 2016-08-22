@@ -13,7 +13,7 @@ object chapter7 {
  def computeDistance(v1:DenseVector[Double],v2:DenseVector[Double]) = pow(v1 - v2,2).sum
   
   def main(args: Array[String]): Unit = {
-     val sparkconf=new SparkConf().setMaster("local[4]").setAppName("chapter4")
+    val sparkconf=new SparkConf().setMaster("local[4]").setAppName("chapter4")
     val sc=new SparkContext(sparkconf)
     val movies=sc.textFile("E:\\tmp\\ml-100k\\u.item")
     println(movies.first())
