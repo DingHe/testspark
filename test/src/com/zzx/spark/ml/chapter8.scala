@@ -49,6 +49,15 @@ object chapter8 {
     getPixelsFromImage(processed)
   }
   
+  
+  def approxEqual(arr1:Array[Double],arr2:Array[Double],tolerance:Double=1e-6):Boolean = {
+    //note we ignore sign of the principal component / singular vector elements
+    val bools=arr1.zip(arr2).map{ case ( v1,v2) => 
+      if (math.abs(math.abs(v1) - math.abs(v2)) > tolerance) false else true
+    }
+    bools.fold(true)(_ & _)
+    
+  }
   def main(args: Array[String]): Unit = {
     val sparkconf=new SparkConf().setMaster("local[4]").setAppName("chapter8")
     val sc=new SparkContext(sparkconf)
@@ -109,6 +118,12 @@ object chapter8 {
     println(s"U dimension:(${svd.U.numRows()},${svd.U.numCols()})")
     println(s"S dimension:(${svd.s.size},)")
     println(s"V dimension:(${svd.V.numRows},${svd.V.numCols})")
+    
+    println(approxEqual(Array(1.0, 2.0, 3.0), Array(1.0, 2.0, 3.0)))
+    
+    println(approxEqual(Array(1.0, 2.0, 3.0), Array(3.0, 2.0, 1.0)))
+    
+    println(approxEqual(svd.V.toArray, pc.toArray))
     
   }
 }
