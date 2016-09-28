@@ -22,6 +22,7 @@ object chapter8 {
     val conf=new Configuration()
     conf.set("fs.default.name","hdfs://iZ28sjghw68Z:8020")
     val fs=FileSystem.get(conf)
+    
     val in=fs.open(new Path(URI.create(path)))
     ImageIO.read(in)
   }

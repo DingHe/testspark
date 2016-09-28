@@ -20,6 +20,9 @@ object chapter3 {
 //    val user_data=sc.textFile("/path/ml-100k/u.user")
     val user_data=sc.textFile("E:\\tmp\\ml-100k\\u.user")
     
+
+    
+    
     user_data.take(10).foreach(println)
     val user_fields=user_data.map(_.split('|'))   //这里特别注意，"|"分解不出来，只能用'|'
     
